@@ -6,7 +6,7 @@
 
 <p align="center">
 <a href="https://img.shields.io/github/last-commit/ashishdotme/courses-demos?style=for-the-badge"><img src="https://img.shields.io/github/last-commit/ashishdotme/courses-demos?style=for-the-badge"></a>
-<a href="https://img.shields.io/github/workflow/status/ashishdotme/notes/Build%20courses-demos/master?style=for-the-badge"><img src="https://img.shields.io/github/workflow/status/ashishdotme/notes/Build%20courses-demos/master?style=for-the-badge"></a>
+<a href="https://img.shields.io/github/workflow/status/ashishdotme/courses-demos/Build%20courses-demos/master?style=for-the-badge"><img src="https://img.shields.io/github/workflow/status/ashishdotme/courses-demos/Build%20courses-demos/master?style=for-the-badge"></a>
 </p>
 
 <p align="center">📦 course materials, demos, and hands-outs for all the courses I have taken till date</p>
