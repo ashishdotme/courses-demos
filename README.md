@@ -15,7 +15,6 @@
 
 <!-- index starts -->
 
-- [.github](https://github.com/ashishdotme/courses-demos/blob/master/.github) - _last updated at 2020-08-24_
 - [Nodejs Design Patterns](https://github.com/ashishdotme/courses-demos/blob/master/nodejs-design-patterns) - _last updated at 2020-08-24_
 - [Using Redux With React](https://github.com/ashishdotme/courses-demos/blob/master/using-redux-with-react) - _last updated at 2020-08-22_
 <!-- index ends -->
