@@ -1,5 +1,5 @@
 Dear Gandhi,
 
-I hope you are ok
+You are bald
 
 Thanks

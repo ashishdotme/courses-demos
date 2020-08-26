@@ -1,6 +1,6 @@
 
 sknahT
 
-ko era uoy epoh I
+dlab era uoY
 
 ,ihdnaG raeD
