@@ -1,7 +1,8 @@
-import { tabs as actionTypes } from './action-types.js';
+export const SET_ACTIVE_TAB = 'SET_ACTIVE_TAB'
 
-
-export const setActiveTab = (id) => ({
-    type: actionTypes.setActiveTab,
-    id,
-});
+export function setActiveTab(activeId) {
+  return {
+    type: SET_ACTIVE_TAB,
+    payload: activeId,
+  }
+}

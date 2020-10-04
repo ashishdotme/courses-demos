@@ -1,9 +1,8 @@
-import { combineReducers } from 'redux';
-import tabs from './tabs.js';
-import notes from './notes.js';
-
+import { combineReducers } from 'redux'
+import notesReducer from './notes'
+import tabsReducer from './tabs'
 
 export default combineReducers({
-    tabs,
-    notes,
-});
+  notes: notesReducer,
+  tabs: tabsReducer,
+})

@@ -1,17 +1,9 @@
-import { createStore, compose } from 'redux';
-import rootReducer from './reducers/root.js';
-import middlewares from './middleware/index.js';
-import { localStorageKey } from '../constants.js';
+import { createStore } from 'redux'
+import rootReducer from './reducers/root'
 
-const composerFunction = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+)
 
-const getLocalStorageState = () => {
-    const cache = localStorage.getItem(localStorageKey);
-    return cache ? JSON.parse(cache) : {};
-}
-
-export default createStore(
-    rootReducer,
-    getLocalStorageState(),
-    composerFunction(middlewares),
-);
+export default store
