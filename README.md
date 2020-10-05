@@ -14,7 +14,7 @@
 ## Index
 
 <!-- index starts -->
-* [React Hooks](https://github.com/ashishdotme/courses-demos/blob/master/react-hooks) - *last updated at 2020-10-04*
+* [React Hooks](https://github.com/ashishdotme/courses-demos/blob/master/react-hooks) - *last updated at 2020-10-06*
 * [Using Redux With React](https://github.com/ashishdotme/courses-demos/blob/master/using-redux-with-react) - *last updated at 2020-10-04*
 * [Nodejs Design Patterns](https://github.com/ashishdotme/courses-demos/blob/master/nodejs-design-patterns) - *last updated at 2020-08-29*
 <!-- index ends -->
