@@ -1,21 +1,28 @@
 export default function reducer(state, action) {
   switch (action.type) {
+    case 'GET_TODOS':
+      return {
+        ...state,
+        todos: action.payload,
+      }
     case 'TOGGLE_TODO':
-      const toggledTodos = state.todos.map((t) =>
-        t.id === action.payload.id ? { ...t, complete: !action.payload.complete } : t,
-      )
+      const toggledTodos = state.todos.map((t) => (t.id === action.payload.id ? action.payload : t))
       return {
         ...state,
         todos: toggledTodos,
       }
     case 'DELETE_TODO':
-      const filteredTodos = state.todos.filter((t) => t.id !== action.payload.id)
-      const isCurrentTodoDeleted =
-        action.payload.id === state.currentTodo.id ? {} : state.currentTodo
-      return {
-        ...state,
-        currentTodo: isCurrentTodoDeleted,
-        todos: filteredTodos,
+      if (action.payload && action.payload.id) {
+        const filteredTodos = state.todos.filter((t) => t.id !== action.payload.id)
+        const isCurrentTodoDeleted =
+          action.payload.id === state.currentTodo.id ? {} : state.currentTodo
+        return {
+          ...state,
+          currentTodo: isCurrentTodoDeleted,
+          todos: filteredTodos,
+        }
+      } else {
+        return state
       }
     case 'CHANGE_CURRENT_TODO':
       return {
@@ -23,13 +30,7 @@ export default function reducer(state, action) {
         currentTodo: action.payload,
       }
     case 'UPDATE_TODO':
-      if (!action.payload) {
-        return state
-      }
-      if (state.todos.findIndex((t) => t.text === action.payload) > -1) {
-        return state
-      }
-      const updatedTodo = { ...state.currentTodo, text: action.payload }
+      const updatedTodo = action.payload
       const updatedTodoIndex = state.todos.findIndex((t) => t.id === state.currentTodo.id)
       return {
         ...state,
@@ -41,12 +42,6 @@ export default function reducer(state, action) {
         ],
       }
     case 'ADD_TODO':
-      if (!action.payload.text) {
-        return state
-      }
-      if (state.todos.findIndex((t) => t.text === action.payload.text) > -1) {
-        return state
-      }
       const newTodos = [...state.todos, action.payload]
       return {
         ...state,

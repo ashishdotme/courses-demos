@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import axios from 'axios'
 import TodosContext from '../context'
 
 const TodosList = () => {
@@ -12,7 +13,15 @@ const TodosList = () => {
           state.todos.map((t, i) => (
             <li className="bg-orange-500 border-black border-dashed border-2 my-2 py-2 flex items-center">
               <span
-                onDoubleClick={() => dispatch({ type: 'TOGGLE_TODO', payload: t })}
+                onDoubleClick={async () => {
+                  const response = await axios.patch(
+                    `https://hooks-api-lemon.vercel.app/todos/${t.id}`,
+                    {
+                      complete: !t.complete,
+                    },
+                  )
+                  dispatch({ type: 'TOGGLE_TODO', payload: response.data })
+                }}
                 className={`cursor-pointer flex-1 ml-12 ${
                   t.complete && 'line-through text-gray-800'
                 }`}
@@ -26,7 +35,12 @@ const TodosList = () => {
                   className="h-6"
                 />
               </button>
-              <button onClick={() => dispatch({ type: 'DELETE_TODO', payload: t })}>
+              <button
+                onClick={async () => {
+                  await axios.delete(`https://hooks-api-lemon.vercel.app/todos/${t.id}`)
+                  dispatch({ type: 'DELETE_TODO', payload: t })
+                }}
+              >
                 <img
                   src="https://microicon-clone.vercel.app/delete/8b0000"
                   alt="Delete"

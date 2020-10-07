@@ -1,4 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
+import axios from 'axios'
+import { uuid } from 'uuidv4'
 import TodosContext from '../context'
 
 const TodoForm = () => {
@@ -16,18 +18,29 @@ const TodoForm = () => {
     }
   }, [currentTodo.id])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setTodo('')
     if (currentTodo.text) {
+      const response = await axios.patch(
+        `https://hooks-api-lemon.vercel.app/todos/${currentTodo.id}`,
+        {
+          text: todo,
+        },
+      )
       dispatch({
         type: 'UPDATE_TODO',
-        payload: todo,
+        payload: response.data,
       })
     } else {
+      const response = await axios.post('https://hooks-api-lemon.vercel.app/todos', {
+        id: uuid(),
+        text: todo,
+        complete: false,
+      })
       dispatch({
         type: 'ADD_TODO',
-        payload: { text: todo, id: todos.length + 1, complete: false },
+        payload: response.data,
       })
     }
   }
