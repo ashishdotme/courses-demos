@@ -7,3 +7,6 @@
 **/.cache
 **/dist
 courses.db
+**/out
+.idea
+
