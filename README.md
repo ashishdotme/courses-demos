@@ -14,6 +14,7 @@
 ## Index
 
 <!-- index starts -->
+* [Pluralsight Spring Framework](https://github.com/ashishdotme/courses-demos/blob/master/pluralsight-spring-framework) - *last updated at 2020-10-25*
 * [Object Oriented Programming Java](https://github.com/ashishdotme/courses-demos/blob/master/object-oriented-programming-java) - *last updated at 2020-10-21*
 * [React Hooks](https://github.com/ashishdotme/courses-demos/blob/master/react-hooks) - *last updated at 2020-10-08*
 * [Using Redux With React](https://github.com/ashishdotme/courses-demos/blob/master/using-redux-with-react) - *last updated at 2020-10-04*
