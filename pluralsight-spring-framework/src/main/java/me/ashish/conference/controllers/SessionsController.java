@@ -23,7 +23,7 @@ public class SessionsController {
 
     @GetMapping
     @RequestMapping("{id}")
-    public Session getOne(Long id) {
+    public Session getOne(@PathVariable Long id) {
         return sessionRepository.getOne(id);
     }
 
