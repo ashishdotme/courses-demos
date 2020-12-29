@@ -14,6 +14,8 @@
 ## Index
 
 <!-- index starts -->
+* [Udemy Mysql](https://github.com/ashishdotme/courses-demos/blob/master/udemy-mysql) - *last updated at 2020-12-29*
+* [Oreally Modern Java](https://github.com/ashishdotme/courses-demos/blob/master/oreally-modern-java) - *last updated at 2020-12-29*
 * [Pluralsight Spring Framework](https://github.com/ashishdotme/courses-demos/blob/master/pluralsight-spring-framework) - *last updated at 2020-10-26*
 * [Object Oriented Programming Java](https://github.com/ashishdotme/courses-demos/blob/master/object-oriented-programming-java) - *last updated at 2020-10-21*
 * [React Hooks](https://github.com/ashishdotme/courses-demos/blob/master/react-hooks) - *last updated at 2020-10-08*
