@@ -9,4 +9,4 @@
 courses.db
 **/out
 .idea
-
+*.class
