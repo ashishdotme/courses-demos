@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using RoomBooking.Core;
 using RoomBooking.Core.DataServices;
 using RoomBooking.Core.Models;
@@ -22,7 +23,12 @@ namespace RoomBooking.Core
         throw new ArgumentNullException(nameof(bookingRequest));
       }
 
-      _roomBookingService.Save(CreateRoomBookingObject<Booking>(bookingRequest));
+      var availableRooms = _roomBookingService.GetAvailableRooms(bookingRequest.Date);
+
+      if (availableRooms.Any())
+      {
+        _roomBookingService.Save(CreateRoomBookingObject<Booking>(bookingRequest));
+      }
 
       return CreateRoomBookingObject<RoomBookingResult>(bookingRequest);
     }

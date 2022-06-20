@@ -4,6 +4,7 @@ using System;
 using Shouldly;
 using RoomBooking.Core.DataServices;
 using Moq;
+using System.Collections.Generic;
 
 namespace RoomBooking.Tests
 {
@@ -13,21 +14,24 @@ namespace RoomBooking.Tests
     private RoomBookingRequestProcessor _processor;
     private RoomBookingRequest _request;
     private Mock<IRoomBookingService> _roomBookingServiceMock;
+    private List<Room> _availableRooms;
 
     public RoomBookingRequestProcessorTest()
     {
       // Arrange
-
-      _roomBookingServiceMock = new Mock<IRoomBookingService>();
-
-      _processor = new RoomBookingRequestProcessor(_roomBookingServiceMock.Object);
-
       _request = new RoomBookingRequest
       {
         FullName = "Test Name",
         Email = "test@request.com",
-        Date = new DateTime(2, 2, 2)
+        Date = new DateTime(2021, 11, 22)
       };
+
+
+      _availableRooms = new List<Room> { new Room() { Id = 1} };
+
+      _roomBookingServiceMock = new Mock<IRoomBookingService>();
+      _roomBookingServiceMock.Setup(q => q.GetAvailableRooms(_request.Date)).Returns(_availableRooms);
+      _processor = new RoomBookingRequestProcessor(_roomBookingServiceMock.Object);
 
     }
 
@@ -69,6 +73,13 @@ namespace RoomBooking.Tests
       savedBooking.Date.ShouldBe(_request.Date);
     }
 
+    [Fact]
+    public void Should_Not_Save_Room_Booking_Request_If_None_Available()
+    {
+      _availableRooms.Clear();
+      _processor.BookRoom(_request);
+      _roomBookingServiceMock.Verify(q => q.Save(It.IsAny<Booking>()), Times.Never);
+    }
   }
 }
 
