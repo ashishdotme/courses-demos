@@ -1,8 +1,10 @@
-﻿namespace RoomBooking.Core
+﻿using System;
+using RoomBooking.Core.Models;
+
+namespace RoomBooking.Core
 {
-  public class RoomBookingRequest
+  public class RoomBookingRequest : RoomBookingBase
   {
-    public string FullName { get; set; }
-    public string Email { get; set; }
+
   }
 }

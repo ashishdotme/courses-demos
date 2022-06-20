@@ -1,6 +1,10 @@
-﻿namespace RoomBooking.Tests
+﻿using System;
+using RoomBooking.Core.Models;
+
+namespace RoomBooking.Core
 {
-  internal class RoomBookingResult
+  public class RoomBookingResult : RoomBookingBase
   {
+
   }
 }
