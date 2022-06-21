@@ -1,5 +1,5 @@
 ﻿using System;
-using RoomBooking.Core.Models;
+using RoomBooking.Core.Domain;
 
 namespace RoomBooking.Core
 {

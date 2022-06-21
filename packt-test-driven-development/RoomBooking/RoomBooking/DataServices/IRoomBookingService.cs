@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using RoomBooking.Core.Domain;
 
 namespace RoomBooking.Core.DataServices
 {

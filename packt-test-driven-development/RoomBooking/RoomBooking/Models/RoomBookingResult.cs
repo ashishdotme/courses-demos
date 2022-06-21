@@ -1,6 +1,6 @@
 ﻿using System;
+using RoomBooking.Core.Domain;
 using RoomBooking.Core.Enums;
-using RoomBooking.Core.Models;
 
 namespace RoomBooking.Core
 {

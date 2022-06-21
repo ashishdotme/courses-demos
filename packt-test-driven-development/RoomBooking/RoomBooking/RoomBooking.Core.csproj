@@ -18,4 +18,9 @@
     <Folder Include="DataServices\" />
     <Folder Include="Enums\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RoomBooking.Domain\RoomBooking.Domain.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

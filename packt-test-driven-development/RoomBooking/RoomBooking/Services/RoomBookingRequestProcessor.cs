@@ -2,8 +2,8 @@
 using System.Linq;
 using RoomBooking.Core;
 using RoomBooking.Core.DataServices;
+using RoomBooking.Core.Domain;
 using RoomBooking.Core.Enums;
-using RoomBooking.Core.Models;
 
 namespace RoomBooking.Core
 {

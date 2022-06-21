@@ -6,6 +6,7 @@ using RoomBooking.Core.DataServices;
 using RoomBooking.Core.Enums;
 using Moq;
 using System.Collections.Generic;
+using RoomBooking.Core.Domain;
 
 namespace RoomBooking.Tests
 {

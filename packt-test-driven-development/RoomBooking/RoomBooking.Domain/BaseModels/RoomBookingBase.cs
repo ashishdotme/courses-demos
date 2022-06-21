@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RoomBooking.Core.Models
+namespace RoomBooking.Core.Domain
 {
   public abstract class RoomBookingBase
   {
