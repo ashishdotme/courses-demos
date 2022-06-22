@@ -14,7 +14,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using RoomBooking.Core;
+using RoomBooking.Core.DataServices;
 using RoomBooking.Persistence;
+using RoomBooking.Persistence.Repositories;
 
 namespace RoomBooking.API
 {
@@ -41,7 +43,20 @@ namespace RoomBooking.API
       conn.Open();
 
       services.AddDbContext<RoomBookingAppDbContext>(opt => opt.UseSqlite(conn));
+
+      EnsureDatabaseCreate(conn);
+
+      services.AddScoped<IRoomBookingService, RoomBookingService>();
       services.AddScoped<IRoomBookingRequestProcessor, RoomBookingRequestProcessor>();
+    }
+
+    private void EnsureDatabaseCreate(SqliteConnection conn)
+    {
+      var builder = new DbContextOptionsBuilder<RoomBookingAppDbContext>();
+      builder.UseSqlite(conn);
+
+      using var context = new RoomBookingAppDbContext(builder.Options);
+      context.Database.EnsureCreated();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
