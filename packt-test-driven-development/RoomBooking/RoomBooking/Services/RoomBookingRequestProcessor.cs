@@ -7,7 +7,7 @@ using RoomBooking.Core.Enums;
 
 namespace RoomBooking.Core
 {
-  public class RoomBookingRequestProcessor
+  public class RoomBookingRequestProcessor : IRoomBookingRequestProcessor
   {
     private IRoomBookingService _roomBookingService;
 
